@@ -6,7 +6,7 @@ import time
 def index(request):
   led = 18
 
-  GPIO.setmode(GPIO.BOARD)
+  GPIO.setmode(GPIO.BCM)
   GPIO.setup(led, GPIO.OUT)
   GPIO.output(led, GPIO.HIGH)
   time.sleep(2)
