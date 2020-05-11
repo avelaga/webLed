@@ -6,17 +6,18 @@ pixels = neopixel.NeoPixel(board.D18, 30)
 
 def index(request):
   val = 0
-  num_pixels = 6
+  num_pixels = 10
+  len = 2
 
-  for a in range (50):
-    val = val + 1
+  for a in range (25):
     val = val % num_pixels
     for n in range (num_pixels):
-      if n>=val:
-        pixels[n] = (255, 150, 5)
+      if n >= val and n < val + len:
+        pixels[n] = (0, 255, n*20)
       else:
         pixels[n] = (0,0,0)
-    time.sleep(0.01)
+    time.sleep(0.02)
+    val = val + 1
 
   for n in range (num_pixels):
     pixels[n] = (0,0,0)
