@@ -2,8 +2,16 @@
 from django.http import HttpResponse
 from led import animate
 
+import logging
+logger = logging.getLogger(__name__)
+
 def index(request):
-  
+  print("running animation")
+  logger.error("Test!!")
+  animate()
+  return HttpResponse("nice job, you turned on a light. what an accomplishment")
+
+    
   # pixels = neopixel.NeoPixel(board.D18, 30)
   # r = 0
   # val = 0
@@ -20,6 +28,5 @@ def index(request):
   #   time.sleep(0.01)
 
   # for n in range (num_pixels):
-  #   pixels[n] = (0,0,0)
-  animate()
-  return HttpResponse("nice job, you turned on a light. what an accomplishment")
+  #   pixels[n] = (0,0,0)\
+  # logger.error('Something went wrong!')

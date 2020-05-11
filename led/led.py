@@ -1,9 +1,9 @@
 import board
 import neopixel
 import time
+pixels = neopixel.NeoPixel(board.D18, 30)
 
 def animate():
-  pixels = neopixel.NeoPixel(board.D18, 30)
   r = 0
   val = 0
   num_pixels = 6
