@@ -1,15 +1,23 @@
-# from django.shortcuts import render
 from django.http import HttpResponse
-import RPi.GPIO as GPIO
+import board
+import neopixel
 import time
+pixels = neopixel.NeoPixel(board.D18, 30)
 
 def index(request):
-  led = 18
+  val = 0
+  num_pixels = 6
 
-  GPIO.setmode(GPIO.BCM)
-  GPIO.setup(led, GPIO.OUT)
-  GPIO.output(led, GPIO.HIGH)
-  time.sleep(1)
-  GPIO.output(led, GPIO.LOW)
-  GPIO.cleanup()
-  return HttpResponse("you just briefly turned on a led in my room. refresh this page to do it again.")
+  for a in range (50):
+    val = val + 1
+    val = val % num_pixels
+    for n in range (num_pixels):
+      if n>=val:
+        pixels[n] = (255, 150, 5)
+      else:
+        pixels[n] = (0,0,0)
+    time.sleep(0.01)
+
+  for n in range (num_pixels):
+    pixels[n] = (0,0,0)
+  return HttpResponse("nice job, you turned on a light. what an accomplishment")
