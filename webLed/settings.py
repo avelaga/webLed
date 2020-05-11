@@ -25,7 +25,11 @@ SECRET_KEY = '9_^8s$8it%gp+@uw7e7d^$y$f0@yy3@@!wp$g%=^64il)n2fd8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '192.168.1.170',
+    '72.182.112.17'
+]
 
 
 # Application definition
