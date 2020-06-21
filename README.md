@@ -9,7 +9,7 @@ in addition to the tutorials there's a few more steps to take:
 - enable the i2c interface with the command `sudo raspi-config`, navigating to `Interfacing Options`, and then `I2C`
 - give apache access to the i2c pins with the command `adduser -G i2c www-data`
 - if you want to enable public access, set up port forwarding on your router to forward incoming port 80 (and port 443 if you're using https) requests to the respective ports on the pi 
-- if you want to use https you'll need to buy a domain name (you can get them dirt cheap, i use [porkbun](https://porkbun.com)) and have it point to your ip
+- if you want to use https you'll first need to buy a domain name (you can get them dirt cheap, i use [porkbun](https://porkbun.com)) and have it point to your ip
 
 my rpi tells an arduino nano over the i2c connection to run the animation. you don't have to use an arduino, i chose to so that i could use the FastLED library that's available for it. if you want to control them directly from the rpi you'll want to use [neopixel](https://learn.adafruit.com/neopixels-on-raspberry-pi/python-usage)
 
