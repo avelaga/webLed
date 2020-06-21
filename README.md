@@ -7,6 +7,8 @@ a flask server that enables visitors on [my site](https://abhi.work/hi) to contr
 
 [how to set up https with apache on a raspberry pi](https://pimylifeup.com/raspberry-pi-ssl-lets-encrypt/)
 
+install all python requirements with `pip3 install -r requirements.txt`
+
 in addition to the tutorials there's a few more steps to take:
 - enable the i2c interface with the command `sudo raspi-config`, navigating to `Interfacing Options`, and then `I2C`
 - give apache access to the i2c pins with the command `sudo adduser www-data i2c`
