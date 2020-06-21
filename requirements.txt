@@ -1,0 +1,3 @@
+Flask
+smbus
+flask-cors
